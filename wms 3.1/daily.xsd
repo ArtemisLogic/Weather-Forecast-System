@@ -1,0 +1,76 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SiteRep">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Wx">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Param" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="units" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DV">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Location">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Period" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Rep" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="D" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="Gn" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="Hn" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="PPd" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="S" use="optional"/>
+                                  <xs:attribute type="xs:string" name="V" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="Dm" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="FDm" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="W" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="U" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="Gm" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="Hm" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="PPn" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="Nm" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="FNm" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="type" use="optional"/>
+                        <xs:attribute type="xs:date" name="value" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:int" name="i"/>
+                  <xs:attribute type="xs:float" name="lat"/>
+                  <xs:attribute type="xs:float" name="lon"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="country"/>
+                  <xs:attribute type="xs:string" name="continent"/>
+                  <xs:attribute type="xs:float" name="elevation"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:dateTime" name="dataDate"/>
+            <xs:attribute type="xs:string" name="type"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
